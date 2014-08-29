@@ -57,8 +57,7 @@ exports.commands = {
 		}
 	},
 	custom: function(arg, by, room, con) {
-		if (config.excepts.indexOf(toId(by)) === -1) return false;
-		//if (!this.hasRank(by, '~')) return false;
+		if (!this.hasRank(by, '~')) return false;
 		// Custom commands can be executed in an arbitrary room using the syntax
 		// ".custom [room] command", e.g., to do !data pikachu in the room lobby,
 		// the command would be ".custom [lobby] !data pikachu". However, using
@@ -70,6 +69,7 @@ exports.commands = {
 		}
 		this.say(con, tarRoom || room, arg);
 	},
+
 	js: function(arg, by, room, con) {
 		if (config.excepts.indexOf(toId(by)) === -1) return false;
 		try {
