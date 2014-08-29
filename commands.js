@@ -20,7 +20,7 @@ exports.commands = {
 		} else {
 			var text = '/pm ' + by + ', ';
 		}
-		text += '**Pokémon Showdown Bot** by: Quinella and TalkTakesTime';
+		text += '**Pokémon Showdown Bot** by: Quinella and TalkTakesTime; Modified by The UCN';
 		this.say(con, room, text);
 	},
 	help: 'guide',
@@ -298,6 +298,10 @@ exports.commands = {
 		}
 		this.say(con, room, '/pm ' + by + ', ' + text);
 	},
+	join: function(arg, by, room, con) {
+		if (!this.hasRank(by, '~#&')) return false;
+		this.say(con, room, "/join "+arg+"");
+	},
 	banphrase: 'banword',
 	banword: function(arg, by, room, con) {
 		if (!this.canUse('banword', room, by)) return false;
@@ -500,6 +504,8 @@ exports.commands = {
 			case 18: text += "My reply is no."; break;
 			case 19: text += "Outlook good."; break;
 			case 20: text += "Don't count on it."; break;
+			case 21: text += "That was not funny."; break;
+			case 22: text += "Seriously?"; break;
 		}
 		this.say(con, room, text);
 	},
