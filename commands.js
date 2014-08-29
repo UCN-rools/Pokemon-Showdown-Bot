@@ -302,6 +302,26 @@ exports.commands = {
 		if (!this.hasRank(by, '~#&')) return false;
 		this.say(con, room, "/join "+arg+"");
 	},
+	
+	//Casino and Misc commands...
+	bj: function(arg, by, room, con) {
+		if (!this.hasRank(by, '~#&@%')) return false;
+		this.say(con, room, "/blackjack create "+arg+"");
+	},
+	bjstart: function(arg, by, room, con) {
+		if (!this.hasRank(by, '~#&@%')) return false;
+		this.say(con, room, "/blackjack start");
+	},
+	dice: function(arg, by, room, con) {
+		if (!this.hasRank(by, '~#&')) return false;
+		this.say(con, room, "/startdice "+arg+"");
+	},
+	joindice: function(arg, by, room, con) {
+		if (!this.hasRank(by, '~#&')) return false;
+		this.say(con, room, "/joindice");
+	},
+	
+	//End.
 	banphrase: 'banword',
 	banword: function(arg, by, room, con) {
 		if (!this.canUse('banword', room, by)) return false;
