@@ -287,7 +287,6 @@ exports.parse = {
 		var hasRank = (rank.split('').indexOf(user.charAt(0)) !== -1) || (config.excepts.indexOf(toId(user.substr(1))) !== -1);
 		return hasRank;
 	},
-<<<<<<< .merge_file_a06064
 	canUse: function(cmd, room, user) {
 		var canUse = false;
 		var ranks = ' +%@&#~';
@@ -335,8 +334,7 @@ exports.parse = {
 		req.end();
 	},
 	processChatData: function(user, room, connection, msg) {
-=======
-	checkCaps: function(user, room, connection, msg) {
+checkCaps: function(user, room, connection, msg) {
 		user = toId(user);
 		if (room.charAt(0) === ',' || user === 'bottt') return;
 		room = toId(room);
@@ -350,7 +348,6 @@ exports.parse = {
 			}	
 	},
 	recordChatData: function(user, room, connection, msg) {
->>>>>>> .merge_file_a06104
 		// NOTE: this is still in early stages
 		if (user === toId(config.nick)) {
 			this.ranks[room] = user.charAt(0);
