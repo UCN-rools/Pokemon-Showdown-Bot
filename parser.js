@@ -1,4 +1,4 @@
-﻿/**
+/**
  * This is the file where commands get parsed
  *
  * Some parts of this code are taken from the Pokémon Showdown server code, so
@@ -334,20 +334,6 @@ exports.parse = {
 		req.end();
 	},
 	processChatData: function(user, room, connection, msg) {
-checkCaps: function(user, room, connection, msg) {
-		user = toId(user);
-		if (room.charAt(0) === ',' || user === 'bottt') return;
-		room = toId(room);
-		var alpha = ['A','B','C','D','E','F','G','H','I','J','K','L','M','N','O','P','Q','R','S','T','U','V','W','X','Y','Z'];
-			for (var i=0;i<alpha.length;i++) {
-				if(msg.toUpperCase().indexOf(alpha[i]) >= 0 && config.allowmute) {
-					if (msg === msg.toUpperCase() && msg.length >= 4) {
-						this.say(connection, room, '/mute ' + user +',caps');
-					}
-			}
-			}	
-	},
-	recordChatData: function(user, room, connection, msg) {
 		// NOTE: this is still in early stages
 		if (user === toId(config.nick)) {
 			this.ranks[room] = user.charAt(0);
